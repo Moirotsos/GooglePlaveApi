@@ -55,7 +55,17 @@ In the project's settings, configure the Google Maps API key for the application
     # settings.py  
     GOOGLE_KEY = 'YOUR_GOOGLE_API_KEY'
 
+## Dockerization
+We've prepared Docker containers for seamless deployment of our Django application. Follow these steps to get your application up and running using Docker and Docker Compose:
 
+1. Building Docker Images:
+    Your project's Dockerfile is already set up. Open a terminal and navigate to your project directory. Build the Docker image by running the       following command:
+    ```bash
+    docker build -t your-app-name .
+1. Running with Docker Compose:
+    Your docker-compose.yml file is configured to start your application and its required services. In the terminal, navigate to your project           directory containing the 'docker-compose.yml' file, and execute the following command:
+   ```bash
+    docker-compose up
 
 ## Usage
 
