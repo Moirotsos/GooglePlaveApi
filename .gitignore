@@ -1,0 +1,24 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore database files
+db.sqlite3
+
+# Ignore environment files (e.g., .env)
+googlePlaceApi/.env
+
+# Ignore log files
+logs/
+
+# Ignore virtual environment directories (e.g., venv, virtualenv)
+venv/
+.venv/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore compiled JavaScript files
+dist/
+node_modules/

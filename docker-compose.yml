@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis
+    container_name: redis_container
+    ports:
+      - "6379:6379"
+    networks:
+      - live
+
+  djangoapp:
+    build: .
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 8000:8000
+    image: app:django
+    container_name: google_place_api_container
+    command: >
+      sh -c  "python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - live
+
+networks:
+  live:
